@@ -34,14 +34,14 @@
       "path": "OPP_Metzyme_05092017/All_Stations_precursors_170509.fasta",
       "description": "FASTA files associated to this data.",
       "format": "fasta",
-      "mediatype": "text/x-fasta",
+      "mediatype": "text/x-fasta"
     },
     {
       "name": "2017_saito_metzyme_datasets_050917.rtf",
       "path": "OPP_Metzyme_05092017/2017_Saito_Metaproteome_METZYME_DATASETS_050917.rtf",
       "description": "RTF description of the data.",
       "format": "rtf",
-      "mediatype": "application/rtf ",
+      "mediatype": "application/rtf "
     },
     {
       "opp:dataType": "http://schema.oceanproteinportal.org/0.1.0/data-type/StationMetadata",
