@@ -1,0 +1,964 @@
+{
+  "@context":{
+    "opp": "http://schema.oceanproteinportal.org/0.1.0/",
+    "pro": "http://purl.org/spar/pro/"
+  },
+  "name": "metzyme_opp_doi-12.345_67890",
+  "title": "METYZME Global Proteomics Dataset for expedition KM1128",
+  "description": "Global metaproteomic dataset for KM1128 the METZYME expedition. Size fractionated samples collected by McLane pump filters (filter size 0.2 – 3.0 micron). The global proteome dataset presented here included 16951 protein identifications and 31994 unique peptide identifications (Table S1) compiled from 37 samples and 74 raw files (CID and HCD modes for each file) and ### total spectra.",
+  "homepage": "https://www.bco-dmo.org/dataset/xyz",
+  "version": "0.1.0",
+  "licenses": [{
+    "type": "CC-BY-4.0",
+    "web": "https://creativecommons.org/licenses/by/4.0/",
+    "title": "Creative Commons Attribution 4.0"
+  }],
+  "contributors": [{
+      "name": "Makoto Saito",
+      "email": "msaito@whoi.edu",
+      "web": "http://lod.bco-dmo.org/id/person/50985",
+      "orcid": "0000-0001-6040-9295",
+      "role": "http://purl.org/spar/pro/author"
+    },
+    {
+      "name": "BCO-DMO",
+      "email": "info@bco-dmo.org",
+      "web": "http://lod.bco-dmo.org/id/affiliation/191",
+      "role": "http://purl.org/spar/pro/publisher"
+    }
+  ],
+  "keywords": ["METZYME", "proteomics", "mass spectrometer"],
+  "resources": [
+    {
+      "name": "all_stations_precursors_170509.fasta",
+      "path": "OPP_Metzyme_05092017/All_Stations_precursors_170509.fasta",
+      "description": "FASTA files associated to this data.",
+      "format": "fasta",
+      "mediatype": "text/x-fasta",
+    },
+    {
+      "name": "2017_saito_metzyme_datasets_050917.rtf",
+      "path": "OPP_Metzyme_05092017/2017_Saito_Metaproteome_METZYME_DATASETS_050917.rtf",
+      "description": "RTF description of the data.",
+      "format": "rtf",
+      "mediatype": "application/rtf ",
+    },
+    {
+      "opp:dataType": "http://schema.oceanproteinportal.org/0.1.0/data-type/StationMetadata",
+      "name": "metzyme_proteins_v1_targetdecoypsmvalidator_may9_2017_sheet-station_depth_location.csv",
+      "data": ["OPP_Metzyme_05092017/Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Station_Depth_Location.csv"],
+      "title": "Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Station_Depth_Location.csv",
+      "description": "Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Station_Depth_Location.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": true,
+        "header": true,
+        "caseSensitiveHeader": true,
+        "csvddfVersion": "1.2"
+      },
+      "encoding": "utf-8",
+      "bytes": 924,
+      "hash": "3bf8579aa3496a7d6c60a1aceefd5a74",
+      "licenses": [{
+        "type": "CC-BY-4.0",
+        "web": "https://creativecommons.org/licenses/by/4.0/",
+        "title": "Creative Commons Attribution 4.0"
+      }],
+      "schema": {
+        "fields": [
+          {
+            "name": "column_header",
+            "title": "Station-Depth-Location Header from Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Final.csv",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepthColumnHeader",
+            "description": "Station-Depth-Location Column Header",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "minLength": 1,
+              "pattern": "st[0-9]+\\ [0-9]+m"
+            }
+          },
+          {
+            "name": "station_id",
+            "title": "Station Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/StationIdentifier",
+            "description": "Station Identifier",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "required": true,
+              "minLength": 1,
+              "pattern": "[0-9]+"
+            }
+          },
+          {
+            "name": "depth",
+            "title": "Depth in Meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/DepthMeters",
+            "description": "Depth in Meters",
+            "type": "number",
+            "constraints": {
+              "required": true,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "longitude",
+            "title": "Longitude",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/LongitudeDecimalDegrees",
+            "description": "Longitude in decimal degrees",
+            "type": "number",
+            "constraints": {
+              "required": true,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "latitude",
+            "title": "Latitude",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/LatitudeDecimalDegrees",
+            "description": "Latitude in decimal degrees",
+            "type": "number",
+            "constraints": {
+              "required": true,
+              "minLength": 1
+            }
+          }
+        ],
+        "primaryKey": ["column_header"]
+      }
+    },
+    {
+      "opp:dataType": "http://schema.oceanproteinportal.org/0.1.0/data-type/OceanProtein",
+      "name": "metzyme_proteins_v1_targetdecoypsmvalidator_may9_2017_sheet-final.csv",
+      "data": ["OPP_Metzyme_05092017/Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Final.csv"],
+      "title": "Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Final.csv",
+      "description": "Metzyme_Proteins_V1_targetdecoyPSMvalidator_May9_2017_Sheet-Final.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": true,
+        "header": true,
+        "caseSensitiveHeader": true,
+        "csvddfVersion": "1.2"
+      },
+      "encoding": "utf-8",
+      "bytes": 4812832,
+      "hash": "da562e064308a35c8a29de6ad21a3f19",
+      "licenses": [{
+        "type": "CC-BY-4.0",
+        "web": "https://creativecommons.org/licenses/by/4.0/",
+        "title": "Creative Commons Attribution 4.0"
+      }],
+      "schema": {
+        "fields": [
+          {
+            "name": "row_id",
+            "opp:originalFieldName": "#",
+            "title": "Row ID",
+            "description": "Row ID",
+            "type": "integer",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "protein_id",
+            "opp:originalFieldName": "Identified Proteins (16981 w/decoy, 16586 w/o)",
+            "title": "Protein Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/ProteinIdentifier",
+            "description": "JCVI metagenome ID#",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "minLength": 1
+            }
+          },
+          {
+            "name": "molecular_weight",
+            "opp:originalFieldName": "Molecular Weight",
+            "title": "Molecular Weight",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/MolecularWeight_kDa",
+            "description": "useful calculated information (not needed)",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueRegexPattern": "([0-9]+)\\ kDa",
+            "constraints": {
+              "pattern": "[0-9]+\\ kDa"
+            }
+          },
+          {
+            "name": "best_hit_annotation",
+            "title": "Product Name",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/ProductName",
+            "description": "product name",
+            "type": "string",
+            "format": "default",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "best_hit_species",
+            "title": "Taxon Name",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/TaxonName",
+            "description": "taxon",
+            "type": "string",
+            "format": "default",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "best_hit_taxon_id",
+            "title": "Taxon ID",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/NcbiIdentifier",
+            "description": "taxon id",
+            "type": "string",
+            "format": "default",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "kegg_id",
+            "opp:originalFieldName": "KO",
+            "title": "Kegg Orthology Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/KeggOrthologyIdentifier",
+            "description": "Kegg id",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueDelimeter": "||",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "kegg_description",
+            "opp:originalFieldName": "KO_desc",
+            "title": "Kegg Orthology Name",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/KeggOrthologyName",
+            "description": "Kegg name",
+            "type": "string",
+            "format": "default",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "kegg_pathway",
+            "opp:originalFieldName": "KO_pathway",
+            "title": "Kegg Orthology Name",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/KeggOrthologyPathway",
+            "description": "Kegg pathway",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueDelimeter": " || ",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "enzyme_commission_id",
+            "opp:originalFieldName": "EC",
+            "title": "Enzyme Commission Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/EnzymeCommissionIdentifier",
+            "description": "Enzyme Commission ID#",
+            "type": "string",
+            "format": "default",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "uniprot_id",
+            "opp:originalFieldName": "uniprot",
+            "title": "Uniprot Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/UniprotDatabaseIdentifier",
+            "description": "uniprot database ID #",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueDelimeter": "||",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "pfams_id",
+            "opp:originalFieldName": "PFams",
+            "title": "Protein Family Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/ProteinFamilyIdentifier",
+            "description": "protein family ID#",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueDelimeter": "||",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "pfams_description",
+            "opp:originalFieldName": "PFams_desc",
+            "title": "Protein Family Description",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/ProteinFamilyDescription",
+            "description": "protein family description",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueDelimeter": "||",
+            "missingValue": ["#N/A", ""]
+          },
+          {
+            "name": "st1-050m",
+            "opp:originalFieldName": "st1 050m",
+            "title": "Spectral Count at Station 1 at a depth of 50 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st1-090m",
+            "opp:originalFieldName": "st1 090m",
+            "title": "Spectral Count at Station 1 at a depth of 90 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st1-120m",
+            "opp:originalFieldName": "st1 120m",
+            "title": "Spectral Count at Station 1 at a depth of 120 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st1-200m",
+            "opp:originalFieldName": "st1 200m",
+            "title": "Spectral Count at Station 1 at a depth of 200 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st1-300m",
+            "opp:originalFieldName": "st1 300m",
+            "title": "Spectral Count at Station 1 at a depth of 300 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st1-400m",
+            "opp:originalFieldName": "st1 400m",
+            "title": "Spectral Count at Station 1 at a depth of 400 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st1-600m",
+            "opp:originalFieldName": "st1 600m",
+            "title": "Spectral Count at Station 1 at a depth of 600 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-040m",
+            "opp:originalFieldName": "st3 040m",
+            "title": "Spectral Count at Station 3 at a depth of 40 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-060m",
+            "opp:originalFieldName": "st3 060m",
+            "title": "Spectral Count at Station 3 at a depth of 60 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-120m",
+            "opp:originalFieldName": "st3 120m",
+            "title": "Spectral Count at Station 3 at a depth of 120 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-150m",
+            "opp:originalFieldName": "st3 150m",
+            "title": "Spectral Count at Station 3 at a depth of 150 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-200m",
+            "opp:originalFieldName": "st3 200m",
+            "title": "Spectral Count at Station 3 at a depth of 200 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-250m",
+            "opp:originalFieldName": "st3 250m",
+            "title": "Spectral Count at Station 3 at a depth of 250 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-500m",
+            "opp:originalFieldName": "st3 500m",
+            "title": "Spectral Count at Station 3 at a depth of 500 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-550m",
+            "opp:originalFieldName": "st3 550m",
+            "title": "Spectral Count at Station 3 at a depth of 550 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-600m",
+            "opp:originalFieldName": "st3 600m",
+            "title": "Spectral Count at Station 3 at a depth of 600 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st3-800m",
+            "opp:originalFieldName": "st3 800m",
+            "title": "Spectral Count at Station 3 at a depth of 800 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-020m",
+            "opp:originalFieldName": "st5 020m",
+            "title": "Spectral Count at Station 5 at a depth of 20 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-050m",
+            "opp:originalFieldName": "st5 050m",
+            "title": "Spectral Count at Station 5 at a depth of 50 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-080m",
+            "opp:originalFieldName": "st5 080m",
+            "title": "Spectral Count at Station 5 at a depth of 80 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-120m",
+            "opp:originalFieldName": "st5 120m",
+            "title": "Spectral Count at Station 5 at a depth of 120 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-200m",
+            "opp:originalFieldName": "st5 200m",
+            "title": "Spectral Count at Station 5 at a depth of 200 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-300m",
+            "opp:originalFieldName": "st5 300m",
+            "title": "Spectral Count at Station 5 at a depth of 300 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-400m",
+            "opp:originalFieldName": "st5 400m",
+            "title": "Spectral Count at Station 5 at a depth of 400 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st5-500m",
+            "opp:originalFieldName": "st5 500m",
+            "title": "Spectral Count at Station 5 at a depth of 500 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st6-040m",
+            "opp:originalFieldName": "st6 040m",
+            "title": "Spectral Count at Station 6 at a depth of 40 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st6-080m",
+            "opp:originalFieldName": "st6 080m",
+            "title": "Spectral Count at Station 6 at a depth of 80 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st6-200m",
+            "opp:originalFieldName": "st6 200m",
+            "title": "Spectral Count at Station 6 at a depth of 200 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st8-040m",
+            "opp:originalFieldName": "st8 040m",
+            "title": "Spectral Count at Station 8 at a depth of 40 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st8-070m",
+            "opp:originalFieldName": "st8 070m",
+            "title": "Spectral Count at Station 8 at a depth of 70 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st8-200m",
+            "opp:originalFieldName": "st8 200m",
+            "title": "Spectral Count at Station 8 at a depth of 200 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st9-040m",
+            "opp:originalFieldName": "st9 040m",
+            "title": "Spectral Count at Station 9 at a depth of 40 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st9-070m",
+            "opp:originalFieldName": "st9 070m",
+            "title": "Spectral Count at Station 9 at a depth of 70 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st9-380m",
+            "opp:originalFieldName": "st9 380m",
+            "title": "Spectral Count at Station 9 at a depth of 380 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st12-040m",
+            "opp:originalFieldName": "st12 040m",
+            "title": "Spectral Count at Station 12 at a depth of 40 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st12-120m",
+            "opp:originalFieldName": "st12 120m",
+            "title": "Spectral Count at Station 12 at a depth of 120 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          },
+          {
+            "name": "st12-300m",
+            "opp:originalFieldName": "st12 300m",
+            "title": "Spectral Count at Station 12 at a depth of 300 meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountStationDepth",
+            "description": "Spectral Count at a specific location and depth",
+            "type": "integer",
+            "missingValue": [""],
+            "constraints": {
+              "minimum": "0"
+            }
+          }
+        ],
+        "primaryKey": ["protein_id"]
+      }
+    }, {
+      "opp:dataType": "http://schema.oceanproteinportal.org/0.1.0/data-type/OceanProteinPeptide",
+      "name": "metzyme_v1_peptides_050917_sheet-trimmed_for_portal.csv",
+      "data": ["OPP_Metzyme_05092017/METZYME_V1_peptides_050917_Sheet-trimmed_for_portal.csv"],
+      "title": "METZYME_V1_peptides_050917_Sheet-trimmed_for_portal.csv",
+      "description": "METZYME_V1_peptides_050917_Sheet-trimmed_for_portal.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": true,
+        "header": true,
+        "caseSensitiveHeader": true,
+        "csvddfVersion": "1.2"
+      },
+      "encoding": "utf-8",
+      "bytes": 72009077,
+      "hash": "86e98ebedb6ec30bea18b7e6fb699d4c",
+      "licenses": [{
+        "type": "CC-BY-4.0",
+        "web": "https://creativecommons.org/licenses/by/4.0/",
+        "title": "Creative Commons Attribution 4.0"
+      }],
+      "schema": {
+        "fields": [{
+            "name": "station_id",
+            "opp:originalFieldName": "Stn #",
+            "title": "Station Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/StationIdentifier",
+            "description": "Station Identifier",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "required": true,
+              "minLength": 1,
+              "pattern": "[0-9]+"
+            }
+          },
+          {
+            "name": "depth",
+            "opp:originalFieldName": "Depth",
+            "title": "Depth in Meters",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/DepthMeters",
+            "description": "Depth in Meters",
+            "type": "number"
+          },
+          {
+            "name": "sample_name",
+            "opp:originalFieldName": "MS/MS sample name",
+            "title": "MS/MS sample name",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/RawFileNameSample",
+            "description": "RAW file name - crossreferences to proteomexchange or OPP repository",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "protein_id",
+            "opp:originalFieldName": "Protein ID#",
+            "title": "Protein Identifier",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/ProteinIdentifier",
+            "description": "Metagenome ID# - needed to map to protein IDs. Note we should likely create a novel number to use in addition to this in case this ID is non-unique in the metagenomic world",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "protein_accession_ids",
+            "opp:originalFieldName": "Protein accession numbers",
+            "title": "Protein Accession IDs",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/ProteinIdentifierList",
+            "description": "Duplicate of Protein ID, but can contain multiple entries, might be useful (reflecting multiple proteins containing the peptide)",
+            "type": "string",
+            "format": "default",
+            "opp:fieldValueDelimeter": ","
+          },
+          {
+            "name": "protein_molecular_weight",
+            "opp:originalFieldName": "Protein molecular weight (Da)",
+            "title": "Protein Molecular Weight, measured in daltons",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/MolecularWeightDaltons",
+            "description": "Useful but not necessary data",
+            "type": "number",
+            "groupChar": ","
+          },
+          {
+            "name": "peptide_sequence",
+            "opp:originalFieldName": "Peptide sequence",
+            "title": "Peptide sequence",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/PeptideSequence",
+            "description": "Unique Peptide sequence - ultimately this is the most unique identifier",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "minLength": 1,
+              "pattern": "[A-Z]+"
+            }
+          },
+          {
+            "name": "best_peptide_id_probability",
+            "opp:originalFieldName": "Best Peptide identification probability",
+            "title": "Best Peptide identification probability",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/BestPeptideIdentificationProbability",
+            "description": "Metric of peptide quality - recommended best practice",
+            "type": "number"
+          },
+          {
+            "name": "best_sequest_xcorr_score",
+            "opp:originalFieldName": "Best SEQUEST XCorr score",
+            "title": "Best SEQUEST XCorr score",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SequestXCorrScore",
+            "description": "Metric of peptide quality - recommended best practice",
+            "type": "number"
+          },
+          {
+            "name": "best_sequest_dcn_score",
+            "opp:originalFieldName": "Best SEQUEST DCn score",
+            "title": "Best SEQUEST DCn score",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SequestDCnScore",
+            "description": "Metric of peptide quality - recommended best practice",
+            "type": "number"
+          },
+          {
+            "name": "num_identified_plus2h_spectra",
+            "opp:originalFieldName": "Number of identified +2H spectra",
+            "title": "Number of identified +2H spectra",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/Identified+2HSpectraCount",
+            "description": "Useful but not necessary data",
+            "type": "integer"
+          },
+          {
+            "name": "num_identified_plus3h_spectra",
+            "opp:originalFieldName": "Number of identified +3H spectra",
+            "title": "Number of identified +3H spectra",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/Identified+3HSpectraCount",
+            "description": "Useful but not necessary data",
+            "type": "integer"
+          },
+          {
+            "name": "num_identified_plus4h_spectra",
+            "opp:originalFieldName": "Number of identified +4H spectra",
+            "title": "Number of identified +4H spectra",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/Identified+4HSpectraCount",
+            "description": "Useful but not necessary data",
+            "type": "integer"
+          },
+          {
+            "name": "sum_spectral_counts",
+            "opp:originalFieldName": "SUM Spectral Counts",
+            "title": "SUM Spectral Counts",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/SpectralCountSum",
+            "description": "Sum of +2,+3,+4 data, = total unnormalized spectral counts - Quantitative Value",
+            "type": "integer",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "median_retention_time",
+            "opp:originalFieldName": "Median Retention Time",
+            "title": "Median Retention Time",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/MedianRetentionTime",
+            "description": "useful for dataset comparisons, not necessary",
+            "type": "number"
+          },
+          {
+            "name": "total_precursor_intensity",
+            "opp:originalFieldName": "Total Precursor Intensity",
+            "title": "Total Precursor Intensity",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/TotalPrecursorIntensity",
+            "description": "Another Quantitative Value (2 of 3)",
+            "type": "number",
+            "groupChar": ","
+          },
+          {
+            "name": "total_tic",
+            "opp:originalFieldName": "Total TIC",
+            "title": "Total TIC",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/TotalTIC",
+            "description": "Another Quantitative Value (3 of 3)",
+            "type": "number"
+          },
+          {
+            "name": "peptide_start_index",
+            "opp:originalFieldName": "Peptide start index",
+            "title": "Peptide start index",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/PeptideStartIndex",
+            "description": "Data useful in creating peptide coverage map for WHO page (although could be created without)",
+            "type": "integer"
+          },
+          {
+            "name": "peptide_stop_index",
+            "opp:originalFieldName": "Peptide stop index",
+            "title": "Peptide stop index",
+            "rdfType": "http://schema.oceanproteinportal.org/0.1.0/data-type/field/PeptideStopIndex",
+            "description": "Data useful in creating peptide coverage map for WHO page (although could be created without)",
+            "type": "integer"
+          }
+        ],
+        "primaryKey": ["sample_name","protein_id","peptide_sequence"],
+        "foreignKeys": [{
+          "fields": ["protein_id"],
+          "reference": {
+            "resource": "metzyme_proteins_v1_targetdecoypsmvalidator_may9_2017_sheet-final.csv",
+            "fields": ["protein_id"]
+          }
+        }]
+      }
+    }
+  ]
+}
