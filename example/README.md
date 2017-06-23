@@ -12,8 +12,11 @@ Table Schema > Elasticsearch started at: https://github.com/OpenBudget/open-budg
 touched base about collaborating here: https://gitter.im/frictionlessdata/chat
 
 Tabular Data - http://frictionlessdata.io/guides/tabular-data-package/
+
 CSV Dialects - http://specs.frictionlessdata.io/csv-dialect/ (supports TSV)
+
 Python
 -------
 Creating a Data Package - https://github.com/frictionlessdata/datapackage-py#creating-a-data-package
+
 Validate Existing Data Package - https://github.com/frictionlessdata/datapackage-py#validating-a-data-package
